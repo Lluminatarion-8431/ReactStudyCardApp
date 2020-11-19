@@ -73,4 +73,39 @@ class StudyCards extends React.Component {
         this.props.onReturnToCollections();
     }
 
+    componentDidMount() {
+
+    }
+
+    componentWillUnmount() {
+    }
+
+    render() {
+        let numberOfCards = this.state.cards.length;
+        let index = this.state.studyIndex;
+        let displayIndex = this.state.studyIndex + 1;
+
+        if (this.state.IsWordDisplay) {
+            let currentWord = this.state.cards[index].word;
+            return (
+                <DisplayCardFront
+                    word={currentWord}
+                    index={displayIndex}
+                    flipClick={() => this.FlipCard()}
+                />
+            );
+        } else {
+            let currentDef = this.state.cards[index].definition;
+            return (
+                <DisplayCardBack
+                    def={currentDef}
+                    index={displayIndex}
+                    cardCount={numberOfCards}
+                    nextCardClick={() => this.ReturnToRecollections()}
+                />
+            );
+        }
+    }
 }
+
+export default StudyCards;
