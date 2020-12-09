@@ -11,8 +11,6 @@ const CardData = (props) => {
 
                 <p>{props.def}</p>
                 <button className={"flipCardBtn"} onClick={props.ClickHandler(props.index)} >Reveal</button>
-                {/* <button className={"btn-block"} >I know it!</button>
-                <button className={"btn-block"}>I Don't know it...</button> */}
             </div>
         </div>
     );
